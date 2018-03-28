@@ -1,0 +1,106 @@
+:root {
+  /* Clock */
+  --clock-center-dot-bg: white;
+  --clock-center-dot-size: 14px;
+
+  /* Hand */
+  --hand-hour-width: 6px;
+  --hand-hour-height: 25%;
+  --hand-hour-bg: white;
+  --hand-minute-width: 4px;
+  --hand-minute-height: 30%;
+  --hand-minute-bg: white;
+  --hand-second-width: 2px;
+  --hand-second-height: 35%;
+  --hand-second-bg: red;
+  --hand-second-ball-size: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #1cb5e0, #044377);
+}
+
+.clock {
+  width: 60vmin;
+  height: 60vmin;
+  background-image: linear-gradient(to top, #0ed2f7, #b2fefa);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), inset 0 2px 0 #d1fffd;
+}
+
+.clock::after {
+  content: '';
+  display: block;
+  width: var(--clock-center-dot-size);
+  height: var(--clock-center-dot-size);
+  background-color: var(--clock-center-dot-bg);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+}
+
+.hand {
+  position: absolute;
+  transform-origin: 50% 100%;
+  border-radius: 99px;
+}
+
+.hand-hour {
+  top: calc(50% - var(--hand-hour-height));
+  left: calc(50% - (var(--hand-hour-width) / 2));
+  width: var(--hand-hour-width);
+  height: var(--hand-hour-height);
+  background-color: var(--hand-hour-bg);
+}
+
+.hand-minute {
+  top: calc(50% - var(--hand-minute-height));
+  left: calc(50% - (var(--hand-minute-width) / 2));
+  width: var(--hand-minute-width);
+  height: var(--hand-minute-height);
+  background-color: var(--hand-minute-bg);
+}
+
+.hand-second {
+  top: calc(50% - var(--hand-second-height));
+  left: calc(50% - (var(--hand-second-width) / 2));
+  width: var(--hand-second-width);
+  height: var(--hand-second-height);
+  background-color: var(--hand-second-bg);
+}
+
+.hand-second::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: var(--hand-second-ball-size);
+  height: var(--hand-second-ball-size);
+  top: calc(
+    (var(--hand-second-ball-size) - (var(--hand-second-width) / 2)) * -1
+  );
+  left: calc(
+    ((var(--hand-second-ball-size) / 2) - (var(--hand-second-width) / 2)) * -1
+  );
+  background-color: var(--hand-second-bg);
+  border-radius: 50%;
+}
