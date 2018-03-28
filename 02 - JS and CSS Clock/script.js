@@ -9,7 +9,7 @@ function getCurrentTime() {
 }
 
 function applyRotation({ hours, minutes, seconds }) {
-  hourHand.style.transform = `rotate(${hours * (360 / 24)}deg)`;
+  hourHand.style.transform = `rotate(${hours * (360 / 12)}deg)`;
   minuteHand.style.transform = `rotate(${minutes * (360 / 60)}deg)`;
   secondHand.style.transform = `rotate(${seconds * (360 / 60)}deg)`;
 }
