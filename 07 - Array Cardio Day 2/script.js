@@ -1,3 +1,20 @@
+// Functions
+function logTitle(text) {
+  const consoleStyle = 'font-weight: bold; font-size: 140%';
+
+  console.log(`\n\n%c${text}`, consoleStyle);
+}
+
+function isAdult(person) {
+  const currentYear = new Date().getFullYear();
+
+  return currentYear - person.year >= 18;
+}
+
+function findComment(id) {
+  return comment => comment.id === id;
+}
+
 // Variables
 const people = [
   { name: 'Wes', year: 1988 },
@@ -15,13 +32,29 @@ const comments = [
 ];
 
 // Body
-// Array.prototype.some() // is at least one person 19 or older?
-// Array.prototype.every() // is everyone 19 or older?
+// Array.prototype.some() // is at least one person 18 or older?
+const someAdults = people.some(isAdult);
+logTitle('Is at least one person 18 or older?');
+console.log(someAdults);
+
+// Array.prototype.every() // is everyone 18 or older?
+const allAdults = people.every(isAdult);
+logTitle('Is every person 18 or older?');
+console.log(allAdults);
 
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking for
-// find the comment with the ID of 823423
+// Find the comment with the ID of 823423
+const comment = comments.find(findComment(823423));
+logTitle('Comment with ID of 823423');
+console.table(comment);
 
 // Array.prototype.findIndex()
 // Find the comment with this ID
-// delete the comment with the ID of 823423
+const index = comments.findIndex(findComment(823423));
+
+// Delete the comment with the ID of 823423
+const newComments = [...comments];
+newComments.splice(index, 1);
+logTitle('Comment with ID of 823423 has been removed from the comments array');
+console.table(newComments);
