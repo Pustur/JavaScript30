@@ -47,6 +47,10 @@ input {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), inset 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
+.search:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), inset 0 0 8px var(--primary-color);
+}
+
 .suggestions > li {
   display: flex;
   justify-content: space-between;
@@ -54,7 +58,6 @@ input {
   padding: 20px;
   border-bottom: 1px solid #d8d8d8;
   background-color: white;
-  text-transform: capitalize;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: background 0.2s;
 }
