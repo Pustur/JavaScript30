@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hold Shift to Check Multiple Checkboxes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--
+  The following is a common layout you would see in an email client.
+  When a user clicks a checkbox, holds Shift, and then clicks another checkbox
+  a few rows down, all the checkboxes inbetween those two checkboxes should be
+  checked.
+  -->
+  <ul class="inbox">
+    <li class="item">
+      <input id="1" type="checkbox">
+      <label for="1">This is an inbox layout.</label>
+    </li>
+    <li class="item">
+      <input id="2" type="checkbox">
+      <label for="2">Check one item</label>
+    </li>
+    <li class="item">
+      <input id="3" type="checkbox">
+      <label for="3">Hold down your Shift key</label>
+    </li>
+    <li class="item">
+      <input id="4" type="checkbox">
+      <label for="4">Check a lower item</label>
+    </li>
+    <li class="item">
+      <input id="5" type="checkbox">
+      <label for="5">Everything inbetween should also be set to checked</label>
+    </li>
+    <li class="item">
+      <input id="6" type="checkbox">
+      <label for="6">Try do it without any libraries</label>
+    </li>
+    <li class="item">
+      <input id="7" type="checkbox">
+      <label for="7">Just regular JavaScript</label>
+    </li>
+    <li class="item">
+      <input id="8" type="checkbox">
+      <label for="8">Good Luck!</label>
+    </li>
+    <li class="item">
+      <input id="9" type="checkbox">
+      <label for="9">Don't forget to tweet your result!</label>
+    </li>
+  </ul>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
