@@ -1,3 +1,13 @@
+:root {
+  --mouse-x: 0;
+  --mouse-y: 0;
+  --mouse-x-normalized: calc(((var(--mouse-x) * 2) - 1));
+  --mouse-y-normalized: calc(((var(--mouse-y) * 2) - 1));
+  --shadow-distance: 40px;
+  --shadow-x: calc(var(--mouse-x-normalized) * var(--shadow-distance));
+  --shadow-y: calc(var(--mouse-y-normalized) * var(--shadow-distance));
+}
+
 html {
   font-family: sans-serif;
 }
@@ -7,7 +17,10 @@ body {
 }
 
 h1 {
-  text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+  text-shadow: calc(var(--shadow-x)) calc(var(--shadow-y)) 0 red,
+    calc(var(--shadow-x)) calc(var(--shadow-y) * -1) 0 cyan,
+    calc(var(--shadow-x) * -1) calc(var(--shadow-y) * -1) 0 yellow,
+    calc(var(--shadow-x) * -1) calc(var(--shadow-y)) 0 lime;
   font-size: 100px;
 }
 
