@@ -3,7 +3,11 @@ function addActiveClass(target) {
   const activeClass = 'drum-kit__button--active';
 
   target.classList.add(activeClass);
-  setTimeout(() => target.classList.remove(activeClass), 50);
+  target.addEventListener(
+    'transitionend',
+    () => target.classList.remove(activeClass),
+    { once: true },
+  );
 }
 
 function createAudio(keyCode) {
@@ -50,13 +54,13 @@ const soundsMap = {
 // Events
 window.addEventListener('keydown', e => playAudio(e.keyCode));
 drumKit.addEventListener('click', e => {
-  let target = e.target;
+  let { target } = e;
 
-  while (target && target.tagName !== 'BUTTON') {
-    target = target.parentNode;
+  while (target && !target.matches('button')) {
+    target = target.parentElement;
 
     if (!target) return;
   }
 
-  playAudio(target.getAttribute('data-key'));
+  playAudio(target.dataset.key);
 });
