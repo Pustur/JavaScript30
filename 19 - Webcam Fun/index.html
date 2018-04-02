@@ -11,26 +11,28 @@
   <div class="photobooth">
     <div class="controls">
       <button class="take-photo">Take Photo</button>
-      <!-- <div class="rgb">
-        <label for="rmin">Red Min:</label>
-        <input type="range" min=0 max=255 name="rmin">
-        <label for="rmax">Red Max:</label>
-        <input type="range" min=0 max=255 name="rmax">
+      <div class="rgb">
+        <div class="r">
+          <label for="r-min">Red Min:</label>
+          <input id="r-min" type="range" name="rMin" min="0" max="255" value="0">
+          <label for="r-max">Red Max:</label>
+          <input id="r-max" type="range" name="rMax" min="0" max="255" value="255">
+        </div>
 
-        <br>
+        <div class="g">
+          <label for="g-min">Green Min:</label>
+          <input id="g-min" type="range" name="gMin" min="0" max="255" value="0">
+          <label for="g-max">Green Max:</label>
+          <input id="g-max" type="range" name="gMax" min="0" max="255" value="255">
+        </div>
 
-        <label for="gmin">Green Min:</label>
-        <input type="range" min=0 max=255 name="gmin">
-        <label for="gmax">Green Max:</label>
-        <input type="range" min=0 max=255 name="gmax">
-
-        <br>
-
-        <label for="bmin">Blue Min:</label>
-        <input type="range" min=0 max=255 name="bmin">
-        <label for="bmax">Blue Max:</label>
-        <input type="range" min=0 max=255 name="bmax">
-      </div> -->
+        <div class="b">
+          <label for="b-min">Blue Min:</label>
+          <input id="b-min" type="range" name="bMin" min="0" max="255" value="0">
+          <label for="b-max">Blue Max:</label>
+          <input id="b-max" type="range" name="bMax" min="0" max="255" value="255">
+        </div>
+      </div>
     </div>
 
     <canvas class="photo"></canvas>
