@@ -32,7 +32,7 @@ h1 {
   text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-nav {
+.main-nav {
   background: black;
   top: 0;
   width: 100%;
@@ -41,14 +41,14 @@ nav {
   z-index: 1;
 }
 
-nav ul {
+.main-nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
 }
 
-nav ul > li {
+.main-nav ul > li {
   flex: 1;
   text-align: center;
   display: flex;
@@ -56,7 +56,7 @@ nav ul > li {
   align-items: center;
 }
 
-nav ul > li a {
+.main-nav ul > li a {
   text-decoration: none;
   padding: 20px;
   display: inline-block;
@@ -65,7 +65,7 @@ nav ul > li a {
   text-transform: uppercase;
 }
 
-nav ul > li.logo {
+.main-nav ul > li.logo {
   max-width: 0;
   overflow: hidden;
   background: white;
@@ -74,7 +74,7 @@ nav ul > li.logo {
   font-size: 30px;
 }
 
-nav ul > li.logo a {
+.main-nav ul > li.logo a {
   color: black;
 }
 
@@ -87,4 +87,16 @@ nav ul > li.logo a {
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
   transform: scale(0.98);
   transition: transform 0.5s;
+}
+
+.fixed-nav .main-nav {
+  position: fixed;
+}
+
+.fixed-nav .main-nav ul > li.logo {
+  max-width: 200px;
+}
+
+.fixed-nav .site-wrap {
+  transform: scale(1);
 }
