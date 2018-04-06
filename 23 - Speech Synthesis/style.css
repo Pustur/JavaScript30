@@ -138,7 +138,7 @@ textarea {
   border: 0;
   outline: 0;
   background-color: #f7f7f7;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .voiceinator button {
@@ -146,12 +146,21 @@ textarea {
   position: relative;
   float: left;
   border: 0;
-  border-bottom: 5px solid #f3c010;
+  border-bottom: 5px solid;
   margin-bottom: 0;
-  background-color: #ffc600;
   font-family: 'Pacifico', cursive;
   font-size: 2rem;
   cursor: pointer;
+}
+
+.voiceinator button.speak {
+  background-color: #b6f310;
+  border-bottom-color: #82e600;
+}
+
+.voiceinator button.stop {
+  background-color: #ff7519;
+  border-bottom-color: #f35810;
 }
 
 .voiceinator button:active {
